@@ -1,0 +1,10 @@
+project_id = "my-gcp-project"
+region     = "us-central1"
+network_name = "vnet-shared-01"
+subnet_names = ["subnet-01", "subnet-02"]
+compute_instance_types = ["n1-standard-1", "n1-standard-2"]
+database_types = ["sqlserver", "mysql"]
+firewall_rules = []
+security_settings = {}
+monitoring_settings = {}
+storage_settings = {}
