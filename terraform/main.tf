@@ -1,10 +1,32 @@
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 4.0"
-    }
-  }
+provider "google" {
+  project = var.project_id
+  region  = var.region
+}
 
-  required_version = ">= 1.3.0"
+module "network" {
+  source = "./modules/network"
+}
+
+module "compute_nodes" {
+  source = "./modules/compute-nodes"
+}
+
+module "database" {
+  source = "./modules/database"
+}
+
+module "firewall" {
+  source = "./modules/firewall"
+}
+
+module "security" {
+  source = "./modules/security"
+}
+
+module "monitoring" {
+  source = "./modules/monitoring"
+}
+
+module "storage" {
+  source = "./modules/storage"
 }
